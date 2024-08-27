@@ -1,0 +1,16 @@
+<h1>Edit task</h1>
+<%= form_with model: @task do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :details %><br>
+    <%= f.text_area :details %>
+  </div>
+  <div>
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <%= f.submit "Update task" %>
+<% end %>

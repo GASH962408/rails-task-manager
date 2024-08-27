@@ -1,0 +1,13 @@
+<h1>My tasks</h1>
+<%= link_to "Add a new task", new_task_path %>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, task_path(task) %>
+      <% if task.completed %>
+        <i class="fa fa-check"></i>
+      <% end %>
+      <%= link_to "Delete", task_path(task), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de que quieres eliminar esta tarea?" } %>
+    </li>
+  <% end %>
+</ul>
